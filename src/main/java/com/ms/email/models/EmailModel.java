@@ -1,6 +1,7 @@
 package com.ms.email.models;
 
 import java.time.LocalDateTime;
+import java.util.UUID;
 
 import com.ms.email.enums.StatusEmail;
 
@@ -19,7 +20,7 @@ public class EmailModel {
     
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long emailId;
+    private UUID emailId;
     
     private String ownerRef;
     private String emailFrom;
