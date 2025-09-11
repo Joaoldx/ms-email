@@ -14,6 +14,9 @@ spring.mail.username=${EMAIL_USERNAME}
 spring.mail.password=${EMAIL_PASSWORD}
 ```
 
+edit the variables inside the file .env.example
+you may copy and rename the file to .env
+
 To run application you can use this command or IDE
 
 ```
