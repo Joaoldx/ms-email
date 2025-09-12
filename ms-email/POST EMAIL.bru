@@ -1,0 +1,21 @@
+meta {
+  name: POST EMAIL
+  type: http
+  seq: 1
+}
+
+post {
+  url: http://localhost:8080/sending-email
+  body: json
+  auth: inherit
+}
+
+body:json {
+  {
+      "ownerRef": "Alan",
+      "emailFrom": "alan@company.com",
+      "emailTo": "turing@company.com",
+      "subject": "You are awesome",
+      "text": "You can write huge text here"
+  }
+}
