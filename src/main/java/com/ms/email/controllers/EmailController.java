@@ -1,5 +1,7 @@
 package com.ms.email.controllers;
 
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
 import org.springframework.beans.BeanUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -16,6 +18,8 @@ import jakarta.validation.Valid;
 
 @RestController
 public class EmailController {
+
+    Logger logger = LogManager.getLogger(EmailController.class);
     
     @Autowired
     private EmailService emailService;
@@ -25,6 +29,8 @@ public class EmailController {
         EmailModel emailModel = new EmailModel();
         BeanUtils.copyProperties(emailDto, emailModel);
         emailService.sendEmail(emailModel);
+
+        logger.info("Email enviado com sucesso emailId {}", emailModel.getEmailId());
 
         return new ResponseEntity<EmailModel>(emailModel, HttpStatus.CREATED);
     }
